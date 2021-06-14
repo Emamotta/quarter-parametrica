@@ -3,8 +3,8 @@
 
 %% Intro
 
-% half_FIX;
-quarter_FIX;
+half_FIX;
+%quarter_FIX;
 
 model = 'Parametrica';
 
@@ -39,8 +39,8 @@ n_steps             =   1+Smi.general.simulation_time/dt;
 %% simulate each set
 
 simIn(1:n_sim) = Simulink.SimulationInput(model);                    % pre-allocates simIn memory 
-simIn(:) = simIn(:).setModelParameter('SolverType', 'Fixed-step');
-simIn(:) = simIn(:).setModelParameter('FixedStep' ,  num2str(dt));
+%simIn(:) = simIn(:).setModelParameter('SolverType', 'Fixed-step');
+%simIn(:) = simIn(:).setModelParameter('FixedStep' ,  num2str(dt));
 
 tic
 for ii = 1:numel(dx)
